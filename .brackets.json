@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Applications/MAMP/htdocs/cordova/kot/www/lib/ionicuirouter/ionicUIRouter.js",
+        "/Applications/MAMP/htdocs/cordova/kot/www/lib/ionic/js/ionic.min.js"
+    ]
+}

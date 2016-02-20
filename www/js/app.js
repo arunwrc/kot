@@ -20,3 +20,36 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   });
 })
+.config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+
+    .state('categories', {
+      url: 'templates/categories',
+      templateUrl: 'templates/categories.html',
+      abstract: false
+    })
+    
+  
+  //$urlRouterProvider.otherwise('/tabs/customer');
+
+})
+
+.directive('tabState', function($state) {
+
+    return {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        scope.$watch(function() {
+          return $state.current.name;
+        }, function(stateName) {
+           if(stateName === attrs.uiSref) {
+             element.addClass('active')
+           }
+          else {
+            element.removeClass('active')
+          }
+        });
+      }
+    };
+  })
